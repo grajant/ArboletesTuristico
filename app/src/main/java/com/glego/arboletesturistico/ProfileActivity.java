@@ -1,8 +1,12 @@
 package com.glego.arboletesturistico;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -21,5 +25,36 @@ public class ProfileActivity extends AppCompatActivity {
 
         usernameTextView.setText(extras.getString("username"));
         emailTextView.setText(extras.getString("email"));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.main_page_menu:
+                intent = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.logout_menu:
+                intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(intent);
+        super.onDestroy();
     }
 }

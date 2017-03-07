@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String username;
-    private String email;
     private Bundle extras;
 
     @Override
@@ -37,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("username", extras.getString("username"));
                 intent.putExtra("email", extras.getString("email"));
                 startActivity(intent);
+                finish();
                 break;
             case R.id.logout_menu:
                 intent = new Intent(MainActivity.this, LoginActivity.class);

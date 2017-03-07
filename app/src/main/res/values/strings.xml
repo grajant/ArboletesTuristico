@@ -8,7 +8,8 @@
     <string name="email_label">e-mail:</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="register">Register</string>
+    <string name="register">Sign Up</string>
+    <string name="confirm">Confirm</string>
     <string name="login">Login</string>
     <string name="myProfile">My profile</string>
     <string name="logout">Logout</string>
@@ -24,4 +25,5 @@
     <string name="password_incorrect">Password is incorrect</string>
     <string name="registration_ok">Registration successful</string>
     <string name="registration_failed">Registration cancelled</string>
+    <string name="home">Home</string>
 </resources>
