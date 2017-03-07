@@ -1,0 +1,27 @@
+<!DOCTYPE resources [<!ENTITY username "Username"><!ENTITY password "Password"><!ENTITY re_password "Re-Type Password"><!ENTITY email "Email">]>
+<resources>
+    <string name="app_name">Municipio Arboletes</string>
+    <string name="town_name">Uraba Turistico</string>
+    <string name="profile_name">Guillermo Grajales</string>
+    <string name="name_label">name:</string>
+    <string name="username_label">username:</string>
+    <string name="email_label">e-mail:</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="myProfile">My profile</string>
+    <string name="logout">Logout</string>
+    <string name="retype_password">Re-type password</string>
+    <string name="e_mail">E-mail</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty_username">The field &username; is empty</string>
+    <string name="empty_password">The field &password; is empty</string>
+    <string name="empty_repassword">The field &re_password; is empty</string>
+    <string name="empty_email">The field &email; is empty</string>
+    <string name="password_error">Passwords don\'t match</string>
+    <string name="user_error">User doesn\'t exist</string>
+    <string name="password_incorrect">Password is incorrect</string>
+    <string name="registration_ok">Registration successful</string>
+    <string name="registration_failed">Registration cancelled</string>
+</resources>
