@@ -52,9 +52,14 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onBackPressed() {
         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
     }
 }
