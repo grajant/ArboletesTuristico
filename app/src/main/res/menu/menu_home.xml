@@ -2,10 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/menu_profile"
         android:title="@string/myProfile"/>
+
+    <item
+        android:id="@+id/hoteles_menu"
+        android:title="@string/hotel_title"/>
+    <item
+        android:id="@+id/bars_menu"
+        android:title="@string/bar_title"/>
+    <item
+        android:id="@+id/tourist_menu"
+        android:title="@string/tour_title"/>
     <item
         android:id="@+id/logout_menu"
         android:title="@string/logout"/>
-    <item
-        android:id="@+id/hoteles_menu"
-        android:title="@string/hotels"/>
 </menu>

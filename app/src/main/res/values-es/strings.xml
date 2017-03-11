@@ -27,6 +27,20 @@
     <string name="registration_ok">Registro exitoso</string>
     <string name="registration_failed">Registro cancelado</string>
     <string name="home">Inicio</string>
-    <string name="hotels">Hotels</string>
-    <string name="hotel1">NombreHotel1</string>
+
+    <!-- TODO: English section needed to modify -->
+    <string name="hotel1">Hotel 1</string>
+    <string name="hotel2">Hotel 2</string>
+    <string name="hotel3">Hotel 3</string>
+    <string name="restaurant1">Bar 1</string>
+    <string name="restaurant2">Bar 2</string>
+    <string name="restaurant3">Bar 3</string>
+    <string name="tour1">Attraction 1</string>
+    <string name="tour2">Attraction 1</string>
+    <string name="tour3">Attraction 1</string>
+    <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
+    <string name="hotel_riviera">RIVIERA DEL SOL</string>
+    <string name="hotel_retiro">RETIRO</string>
+    <string name="hotel_title">Hoteles</string>
+    <string name="bar_title">Bares</string>
 </resources>

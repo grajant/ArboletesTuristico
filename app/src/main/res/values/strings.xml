@@ -29,9 +29,22 @@
     <string name="title_activity_places">PlacesActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="hotels">Hotels</string>
+    <string name="hotel1">Hotel 1</string>
+    <string name="hotel2">Hotel 2</string>
+    <string name="hotel3">Hotel 3</string>
+    <string name="restaurant1">Restaurant 1</string>
+    <string name="restaurant2">Restaurant 2</string>
+    <string name="restaurant3">Restaurant 3</string>
+    <string name="tour1">Attraction 1</string>
+    <string name="tour2">Attraction 2</string>
+    <string name="tour3">Attraction 3</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hotel1">NombreHotel1</string>
+    <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
+    <string name="hotel_riviera">RIVIERA DEL SOL</string>
+    <string name="hotel_retiro">RETIRO</string>
+    <string name="hotel_title">Hotels</string>
+    <string name="bar_title">Bars</string>
+    <string name="tour_title">Tourist Attractions</string>
 </resources>
