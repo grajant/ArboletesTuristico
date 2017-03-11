@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [<!ENTITY username "Username"><!ENTITY password "Password"><!ENTITY re_password "Re-Type Password"><!ENTITY email "Email">]>
+<resources>
+    <string name="app_name">Municipio Arboletes</string>
+    <string name="town_name">Uraba Turistico</string>
+    <string name="profile_name">Guillermo Grajales</string>
+    <string name="name_label">nombre:</string>
+    <string name="username_label">usuario:</string>
+    <string name="email_label">correo electrónico:</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="register">Registrarse</string>
+    <string name="confirm">Confrmar</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="myProfile">Mi perfil</string>
+    <string name="logout">Salir</string>
+    <string name="retype_password">Repetir contraseña</string>
+    <string name="e_mail">Correo electrónico</string>
+    <string name="cancel">Cancelar</string>
+    <string name="empty_username">El campo &username; está vacío</string>
+    <string name="empty_password">El campo &password; está vacío</string>
+    <string name="empty_repassword">El campo &re_password; está vacío</string>
+    <string name="empty_email">El campo &email; está vacío</string>
+    <string name="password_error">Las contraseñas no son iguales</string>
+    <string name="user_error">El usuario no existe</string>
+    <string name="password_incorrect">La contraseña es incorrecta</string>
+    <string name="registration_ok">Registro exitoso</string>
+    <string name="registration_failed">Registro cancelado</string>
+    <string name="home">Inicio</string>
+    <string name="hotels">Hotels</string>
+    <string name="hotel1">NombreHotel1</string>
+</resources>

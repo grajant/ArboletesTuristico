@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.hoteles_menu:
+                intent = new Intent(MainActivity.this, PlacesActivity.class);
+                startActivity(intent);
+                finish();
+                break;
         }
         return true;
     }

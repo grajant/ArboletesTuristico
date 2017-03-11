@@ -5,4 +5,7 @@
     <item
         android:id="@+id/logout_menu"
         android:title="@string/logout"/>
+    <item
+        android:id="@+id/hoteles_menu"
+        android:title="@string/hotels"/>
 </menu>
