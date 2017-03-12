@@ -1,5 +1,6 @@
 package com.glego.arboletesturistico;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -62,7 +63,7 @@ public class PlacesActivity extends AppCompatActivity {
                     getString(R.string.hotel2), getString(R.string.hotel3));
             setFragments(1);
         }else if (option.equals("bar")){
-            setStringNames(getString(R.string.bar_title), getString(R.string.restaurant1),
+            setStringNames(getString(R.string.restaurant_title), getString(R.string.restaurant1),
                     getString(R.string.restaurant2), getString(R.string.restaurant3));
             setFragments(2);
         }else if (option.equals("tour")){
@@ -102,7 +103,10 @@ public class PlacesActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.home_menu) {
+            Intent intent = new Intent(PlacesActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
 
@@ -174,6 +178,14 @@ public class PlacesActivity extends AppCompatActivity {
                 tab3Fragment = new HotelThreeFragment();
                 break;
             case 2:
+                tab1Fragment = new RestaurantOneFragment();
+                tab2Fragment = new RestaurantTwoFragment();
+                tab3Fragment = new RestaurantThreeFragment();
+                break;
+            case 3:
+                tab1Fragment = new AttractionOneFragment();
+                tab2Fragment = new AttractionTwoFragment();
+                tab3Fragment = new AttractionThreeFragment();
                 break;
         }
     }

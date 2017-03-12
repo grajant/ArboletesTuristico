@@ -8,7 +8,7 @@
         android:title="@string/hotel_title"/>
     <item
         android:id="@+id/bars_menu"
-        android:title="@string/bar_title"/>
+        android:title="@string/restaurant_title"/>
     <item
         android:id="@+id/tourist_menu"
         android:title="@string/tour_title"/>

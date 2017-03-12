@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE resources [<!ENTITY username "Username"><!ENTITY password "Password"><!ENTITY re_password "Re-Type Password"><!ENTITY email "Email">]>
+<!DOCTYPE resources [<!ENTITY username "Usuario"><!ENTITY password "Contraseña"><!ENTITY re_password "Repetir contraseña"><!ENTITY email "Correo electrónico">]>
 <resources>
     <string name="app_name">Municipio Arboletes</string>
     <string name="town_name">Uraba Turistico</string>
@@ -10,10 +10,10 @@
     <string name="username">Usuario</string>
     <string name="password">Contraseña</string>
     <string name="register">Registrarse</string>
-    <string name="confirm">Confrmar</string>
+    <string name="confirm">Confirmar</string>
     <string name="login">Iniciar sesión</string>
     <string name="myProfile">Mi perfil</string>
-    <string name="logout">Salir</string>
+    <string name="logout">Desconexión</string>
     <string name="retype_password">Repetir contraseña</string>
     <string name="e_mail">Correo electrónico</string>
     <string name="cancel">Cancelar</string>
@@ -27,20 +27,24 @@
     <string name="registration_ok">Registro exitoso</string>
     <string name="registration_failed">Registro cancelado</string>
     <string name="home">Inicio</string>
-
-    <!-- TODO: English section needed to modify -->
     <string name="hotel1">Hotel 1</string>
     <string name="hotel2">Hotel 2</string>
     <string name="hotel3">Hotel 3</string>
-    <string name="restaurant1">Bar 1</string>
-    <string name="restaurant2">Bar 2</string>
-    <string name="restaurant3">Bar 3</string>
-    <string name="tour1">Attraction 1</string>
-    <string name="tour2">Attraction 1</string>
-    <string name="tour3">Attraction 1</string>
+    <string name="restaurant1">Restaurante 1</string>
+    <string name="restaurant2">Restaurante 2</string>
+    <string name="restaurant3">Restaurante 3</string>
+    <string name="tour1">Sitio 1</string>
+    <string name="tour2">Sitio 2</string>
+    <string name="tour3">Sitio 3</string>
     <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
     <string name="hotel_retiro">RETIRO</string>
     <string name="hotel_title">Hoteles</string>
-    <string name="bar_title">Bares</string>
+    <string name="restaurant_title">Restaurantes</string>
+    <string name="restaurant_mirador">RESTAURANTE MIRADOR</string>
+    <string name="restaurant_punto">RESTAURANTE EL PUNTO DEL SABOR</string>
+    <string name="restaurant_nautilus">RESTAURANTE NAUTILUS</string>
+    <string name="volcan">VOLCÁN DE LODO</string>
+    <string name="church">IGLESIA INMACULADA CONCEPCIÓN</string>
+    <string name="beach">PLAYAS</string>
 </resources>

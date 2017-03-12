@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.glego.arboletesturistico.RestaurantThreeFragment">
+    tools:context="com.glego.arboletesturistico.AttractionTwoFragment">
 
-    <!-- TODO: Update fragment information -->
+    <!-- TODO: Update fragment image -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,12 +12,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/restaurant_punto"
+            android:text="@string/church"
             android:textSize="30sp"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:src="@drawable/restaurant_punto_sabor"/>
+            android:src="@drawable/iglesia"/>
     </LinearLayout>
 
 </FrameLayout>

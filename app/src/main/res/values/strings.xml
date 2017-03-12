@@ -45,6 +45,12 @@
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
     <string name="hotel_retiro">RETIRO</string>
     <string name="hotel_title">Hotels</string>
-    <string name="bar_title">Bars</string>
+    <string name="restaurant_title">Restaurants</string>
     <string name="tour_title">Tourist Attractions</string>
+    <string name="restaurant_mirador">RESTAURANTE MIRADOR</string>
+    <string name="restaurant_punto">RESTAURANTE EL PUNTO DEL SABOR</string>
+    <string name="restaurant_nautilus">RESTAURANTE NAUTILUS</string>
+    <string name="volcan">MUD VOLCANO</string>
+    <string name="church">CHURCH INMACULADA CONCEPCIÓN</string>
+    <string name="beach">BEACHES</string>
 </resources>
