@@ -49,7 +49,7 @@
         android:textSize="18sp"
         tools:text="Title"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         />
 
     <TextView
@@ -64,7 +64,7 @@
         android:maxLines="3"
         android:textSize="12sp"
         tools:text="Subtitle"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         />
 
   </RelativeLayout>

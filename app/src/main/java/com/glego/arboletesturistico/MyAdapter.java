@@ -15,9 +15,7 @@ import java.util.ArrayList;
  */
 
 public class MyAdapter extends ArrayAdapter<ListPlaces> {
-    private Context mContext;
-    private LayoutInflater mInflater;
-    private ArrayList<String> mDataSource;
+
 
     public MyAdapter(Context context, ArrayList<ListPlaces> users) {
         super(context, 0, users);
@@ -29,54 +27,21 @@ public class MyAdapter extends ArrayAdapter<ListPlaces> {
         ListPlaces codes = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-           convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_bands, parent, false);
+           convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_places, parent, false);
         }
-        //mInflater.inflate(R.layout.list_item_bands, parent, false);
+
         // Lookup view for data population
-        TextView tvColor = (TextView) convertView.findViewById(R.id.list_title);
-        TextView tvBand = (TextView) convertView.findViewById(R.id.list_subtitle);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.list_title);
+        TextView tvDetail = (TextView) convertView.findViewById(R.id.list_subtitle);
+        TextView tvPrice = (TextView) convertView.findViewById(R.id.list_detail);
         ImageView ivIcon = (ImageView) convertView.findViewById(R.id.list_icon);
         // Populate the data into the template view using the data object
-        tvColor.setText(codes.color);
-        tvBand.setText(codes.band);
-        ivIcon.setImageResource(codes.imageId);
+        tvTitle.setText(codes.getTitle());
+        tvDetail.setText(codes.getDetail());
+        tvPrice.setText(codes.getPrice());
+        ivIcon.setImageResource(codes.getImageId());
         // Return the completed view to render on screen
         return convertView;
     }
-    /*//1
-    @Override
-    public int getCount() {
-        return mDataSource.size();
-    }
 
-    //2
-    @Override
-    public Object getItem(int position) {
-        return mDataSource.get(position);
-    }
-
-    //3
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    //4
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Get view for row item
-        View rowView = mInflater.inflate(R.layout.list_item_bands, parent, false);
-        // Get title element
-        TextView titleTextView = (TextView) rowView.findViewById(R.id.list_title);
-
-        // Get subtitle element
-        TextView subtitleTextView = (TextView) rowView.findViewById(R.id.list_subtitle);
-
-        // Get detail element
-        TextView detailTextView = (TextView) rowView.findViewById(R.id.list_detail);
-
-        // Get thumbnail element
-        ImageView iconImageView = (ImageView) rowView.findViewById(R.id.list_icon);
-        return rowView;
-    }*/
 }
