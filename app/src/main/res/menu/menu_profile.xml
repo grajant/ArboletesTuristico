@@ -3,6 +3,15 @@
     <item android:id="@+id/main_page_menu"
         android:title="@string/home"/>
     <item
+        android:id="@+id/hoteles_menu"
+        android:title="@string/hotel_title"/>
+    <item
+        android:id="@+id/bars_menu"
+        android:title="@string/restaurant_title"/>
+    <item
+        android:id="@+id/tourist_menu"
+        android:title="@string/tour_title"/>
+    <item
         android:id="@+id/logout_menu"
         android:title="@string/logout"/>
 </menu>

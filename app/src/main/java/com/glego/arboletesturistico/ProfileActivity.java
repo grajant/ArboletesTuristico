@@ -39,6 +39,8 @@ public class ProfileActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.main_page_menu:
                 intent = new Intent(ProfileActivity.this, MainActivity.class);
+                intent.putExtra("username", usernameTextView.getText().toString());
+                intent.putExtra("email", emailTextView.getText().toString());
                 startActivity(intent);
                 finish();
                 break;
@@ -47,16 +49,42 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.hoteles_menu:
+                intent = putPlacesExtras("hotel");
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bars_menu:
+                intent = putPlacesExtras("restaurant");
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.tourist_menu:
+                intent = putPlacesExtras("tour");
+                startActivity(intent);
+                finish();
+                break;
         }
         return true;
+    }
+
+    private Intent putPlacesExtras(String place){
+        Intent intent = new Intent(ProfileActivity.this, PlacesActivity.class);
+        intent.putExtra("option", place);
+        intent.putExtra("username", usernameTextView.getText().toString());
+        intent.putExtra("email", emailTextView.getText().toString());
+        return intent;
     }
 
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        intent.putExtra("username", usernameTextView.getText().toString());
+        intent.putExtra("email", emailTextView.getText().toString());
         startActivity(intent);
         finish();
     }
+
 
     @Override
     protected void onDestroy() {

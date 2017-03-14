@@ -41,24 +41,29 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.hoteles_menu:
-                intent = new Intent(MainActivity.this, PlacesActivity.class);
-                intent.putExtra("option", "hotel");
+                intent = putPlacesExtras("hotel");
                 startActivity(intent);
                 finish();
                 break;
             case R.id.bars_menu:
-                intent = new Intent(MainActivity.this, PlacesActivity.class);
-                intent.putExtra("option", "bar");
+                intent = putPlacesExtras("restaurant");
                 startActivity(intent);
                 finish();
                 break;
             case R.id.tourist_menu:
-                intent = new Intent(MainActivity.this, PlacesActivity.class);
-                intent.putExtra("option", "tour");
+                intent = putPlacesExtras("tour");
                 startActivity(intent);
                 finish();
                 break;
         }
         return true;
+    }
+
+    private Intent putPlacesExtras(String place){
+        Intent intent = new Intent(MainActivity.this, PlacesActivity.class);
+        intent.putExtra("option", place);
+        intent.putExtra("username", extras.getString("username"));
+        intent.putExtra("email", extras.getString("email"));
+        return intent;
     }
 }

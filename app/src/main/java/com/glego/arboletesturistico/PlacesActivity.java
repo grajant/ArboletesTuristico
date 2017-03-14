@@ -48,13 +48,15 @@ public class PlacesActivity extends AppCompatActivity {
     private Fragment tab2Fragment;
     private Fragment tab3Fragment;
 
+    Bundle extras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places);
 
         // Get extra from home in order to know which option was selected
-        Bundle extras = getIntent().getExtras();
+        extras = getIntent().getExtras();
         option = extras.getString("option");
 
         // Set strings values depending on selected option
@@ -62,7 +64,7 @@ public class PlacesActivity extends AppCompatActivity {
             setStringNames(getString(R.string.hotel_title), getString(R.string.hotel1),
                     getString(R.string.hotel2), getString(R.string.hotel3));
             setFragments(1);
-        }else if (option.equals("bar")){
+        }else if (option.equals("restaurant")){
             setStringNames(getString(R.string.restaurant_title), getString(R.string.restaurant1),
                     getString(R.string.restaurant2), getString(R.string.restaurant3));
             setFragments(2);
@@ -71,6 +73,8 @@ public class PlacesActivity extends AppCompatActivity {
                     getString(R.string.tour2), getString(R.string.tour3));
             setFragments(3);
         }
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
@@ -100,15 +104,29 @@ public class PlacesActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.home_menu) {
-            Intent intent = new Intent(PlacesActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
+        Intent intent;
+        switch (item.getItemId()){
+            case R.id.main_page_menu:
+                intent = new Intent(PlacesActivity.this, MainActivity.class);
+                intent.putExtra("username", extras.getString("username"));
+                intent.putExtra("email", extras.getString("email"));
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.menu_profile:
+                intent = new Intent(PlacesActivity.this, ProfileActivity.class);
+                intent.putExtra("username", extras.getString("username"));
+                intent.putExtra("email", extras.getString("email"));
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.logout_menu:
+                intent = new Intent(PlacesActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
