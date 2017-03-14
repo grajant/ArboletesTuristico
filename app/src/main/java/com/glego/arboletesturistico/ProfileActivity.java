@@ -1,15 +1,18 @@
 package com.glego.arboletesturistico;
 
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 
-public class ProfileActivity extends AppCompatActivity {
-
+public class ProfileActivity extends DrawerActivity{
     private TextView usernameTextView;
     private TextView emailTextView;
 
@@ -21,19 +24,19 @@ public class ProfileActivity extends AppCompatActivity {
         usernameTextView = (TextView) findViewById(R.id.username);
         emailTextView = (TextView) findViewById(R.id.email);
 
-        Bundle extras = getIntent().getExtras();
+        extras = getIntent().getExtras();
 
         usernameTextView.setText(extras.getString("username"));
         emailTextView.setText(extras.getString("email"));
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_profile, menu);
         return true;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent;
         switch (item.getItemId()){
@@ -61,5 +64,5 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }
+    }*/
 }

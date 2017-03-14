@@ -4,10 +4,10 @@
         android:title="@string/myProfile"/>
 
     <item
-        android:id="@+id/hoteles_menu"
+        android:id="@+id/hotels_menu"
         android:title="@string/hotel_title"/>
     <item
-        android:id="@+id/bars_menu"
+        android:id="@+id/restaurants_menu"
         android:title="@string/restaurant_title"/>
     <item
         android:id="@+id/tourist_menu"

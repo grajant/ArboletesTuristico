@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class PlacesActivity extends AppCompatActivity {
+public class PlacesActivity extends DrawerActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -54,7 +54,7 @@ public class PlacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_places);
 
         // Get extra from home in order to know which option was selected
-        Bundle extras = getIntent().getExtras();
+        extras = getIntent().getExtras();
         option = extras.getString("option");
 
         // Set strings values depending on selected option
@@ -72,7 +72,7 @@ public class PlacesActivity extends AppCompatActivity {
             setFragments(3);
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
@@ -88,7 +88,7 @@ public class PlacesActivity extends AppCompatActivity {
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu_home; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_places, menu);
@@ -111,7 +111,7 @@ public class PlacesActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 
 

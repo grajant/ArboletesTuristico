@@ -10,9 +10,9 @@
     <string name="password">Password</string>
     <string name="register">Sign Up</string>
     <string name="confirm">Confirm</string>
-    <string name="login">Login</string>
+    <string name="login">Log In</string>
     <string name="myProfile">My profile</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Log Out</string>
     <string name="retype_password">Re-type password</string>
     <string name="e_mail">E-mail</string>
     <string name="cancel">Cancel</string>
@@ -39,7 +39,6 @@
     <string name="tour2">Attraction 2</string>
     <string name="tour3">Attraction 3</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
@@ -53,4 +52,9 @@
     <string name="volcan">MUD VOLCANO</string>
     <string name="church">CHURCH INMACULADA CONCEPCIÓN</string>
     <string name="beach">BEACHES</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="sites">Sites</string>
 </resources>

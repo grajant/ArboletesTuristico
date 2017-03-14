@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DrawerActivity {
 
-    private Bundle extras;
+    //private Bundle extras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         extras = getIntent().getExtras();
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.hoteles_menu:
+            case R.id.hotels_menu:
                 intent = new Intent(MainActivity.this, PlacesActivity.class);
                 intent.putExtra("option", "hotel");
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.bars_menu:
+            case R.id.restaurants_menu:
                 intent = new Intent(MainActivity.this, PlacesActivity.class);
                 intent.putExtra("option", "bar");
                 startActivity(intent);
@@ -60,5 +60,5 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
-    }
+    }*/
 }

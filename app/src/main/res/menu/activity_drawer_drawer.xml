@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_menu"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/myProfile" />
+    </group>
+    <group android:checkableBehavior="none">
+        <item android:title="@string/sites">
+            <menu>
+                <item
+                    android:id="@+id/hotels_menu"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/hotel_title" />
+                <item
+                    android:id="@+id/restaurants_menu"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/restaurant_title" />
+                <item
+                    android:id="@+id/tourist_menu"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/tour_title" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:id="@+id/bottom">
+        <item
+            android:id="@+id/logout_menu"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/logout" />
+    </group>
+
+
+
+
+
+
+
+
+
+
+</menu>
