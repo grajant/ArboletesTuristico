@@ -47,4 +47,11 @@
     <string name="volcan">VOLCÁN DE LODO</string>
     <string name="church">IGLESIA INMACULADA CONCEPCIÓN</string>
     <string name="beach">PLAYAS</string>
+    <string name="arboletes_info">
+        Arboletes es un municipio de Colombia, localizado en la región de Urabá en el departamento de Antioquia.
+
+        Limita por el norte con el mar Caribe y con el departamento de Córdoba, por el este con el departamento de Córdoba y
+        con el municipio de San Pedro de Urabá, por el sur limita con los municipios de San Pedro de Urabá, Turbo y Necoclí,
+        y por el oeste con los municipios de Necoclí y San Juan de Urabá.
+    </string>
 </resources>
