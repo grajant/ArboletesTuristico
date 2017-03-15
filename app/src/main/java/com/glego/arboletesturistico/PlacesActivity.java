@@ -125,6 +125,21 @@ public class PlacesActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.hoteles_menu:
+                intent = putPlacesExtras("hotel");
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.bars_menu:
+                intent = putPlacesExtras("restaurant");
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.tourist_menu:
+                intent = putPlacesExtras("tour");
+                startActivity(intent);
+                finish();
+                break;
         }
 
 
@@ -206,5 +221,13 @@ public class PlacesActivity extends AppCompatActivity {
                 tab3Fragment = new AttractionThreeFragment();
                 break;
         }
+    }
+
+    private Intent putPlacesExtras(String place){
+        Intent intent = new Intent(PlacesActivity.this, PlacesActivity.class);
+        intent.putExtra("option", place);
+        intent.putExtra("username", extras.getString("username"));
+        intent.putExtra("email", extras.getString("email"));
+        return intent;
     }
 }
