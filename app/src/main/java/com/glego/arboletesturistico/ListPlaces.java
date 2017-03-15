@@ -1,5 +1,7 @@
 package com.glego.arboletesturistico;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 
 /**
@@ -35,13 +37,28 @@ public class ListPlaces {
         return imageId;
     }
 
-    public static ArrayList<ListPlaces> defaultValues() {
+    public static ArrayList<ListPlaces> hotelsValues(Context context) {
         ArrayList<ListPlaces> users = new ArrayList<>();
-        users.add(new ListPlaces("HOTEL MIRADOR", "Primera banda","15.000", R.drawable.hotel_mirador));
-        users.add(new ListPlaces("HOTEL RETIRO", "Segunda banda","15.000" , R.drawable.hotel_retiro));
-        users.add(new ListPlaces("HOTEL RIVIERA", "Multiplicador","15.000", R.drawable.hotel_riviera));
+        users.add(new ListPlaces(context.getString(R.string.hotel_mirador), "Primera banda","15.000", R.drawable.hotel_mirador));
+        users.add(new ListPlaces(context.getString(R.string.hotel_riviera), "Segunda banda","15.000" , R.drawable.hotel_retiro));
+        users.add(new ListPlaces(context.getString(R.string.hotel_retiro), "Multiplicador","15.000", R.drawable.hotel_riviera));
         return users;
     }
 
+    public static ArrayList<ListPlaces> restaurantsValues(Context context) {
+        ArrayList<ListPlaces> users = new ArrayList<>();
+        users.add(new ListPlaces(context.getString(R.string.restaurant_mirador), "Primera banda","15.000", R.drawable.restaurant_mirador));
+        users.add(new ListPlaces(context.getString(R.string.restaurant_nautilus), "Segunda banda","15.000" , R.drawable.restaurant_nautiluz));
+        users.add(new ListPlaces(context.getString(R.string.restaurant_punto), "Multiplicador","15.000", R.drawable.restaurant_punto_sabor));
+        return users;
+    }
+
+    public static ArrayList<ListPlaces> attractionsValues(Context context) {
+        ArrayList<ListPlaces> users = new ArrayList<>();
+        users.add(new ListPlaces(context.getString(R.string.attraction_volcano), "Primera banda","15.000", R.drawable.volcano));
+        users.add(new ListPlaces(context.getString(R.string.attraction_church), "Segunda banda","15.000" , R.drawable.church));
+        users.add(new ListPlaces(context.getString(R.string.attraction_beach), "Multiplicador","15.000", R.drawable.beaches));
+        return users;
+    }
 
 }

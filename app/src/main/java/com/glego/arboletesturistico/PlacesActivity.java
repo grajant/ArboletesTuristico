@@ -1,17 +1,12 @@
 package com.glego.arboletesturistico;
 
-import android.content.Intent;
+import android.support.v4.app.ListFragment;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
 public class PlacesActivity extends DrawerActivity {
@@ -44,9 +39,9 @@ public class PlacesActivity extends DrawerActivity {
     /**
      * Fragments attributes to replace depending on what option has to be displayed
      */
-    private Fragment tab1Fragment;
-    private Fragment tab2Fragment;
-    private Fragment tab3Fragment;
+    private ListFragment tab1Fragment;
+    private ListFragment tab2Fragment;
+    private ListFragment tab3Fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,19 +54,19 @@ public class PlacesActivity extends DrawerActivity {
 
         // Set strings values depending on selected option
         if (option.equals("hotel")){
-            setStringNames(getString(R.string.hotel_title), getString(R.string.hotel1),
-                    getString(R.string.hotel2), getString(R.string.hotel3));
-            setFragments(1);
-        }else if (option.equals("bar")){
-            setStringNames(getString(R.string.restaurant_title), getString(R.string.restaurant1),
-                    getString(R.string.restaurant2), getString(R.string.restaurant3));
-            setFragments(2);
-        }else if (option.equals("tour")){
-            setStringNames(getString(R.string.tour_title), getString(R.string.tour1),
-                    getString(R.string.tour2), getString(R.string.tour3));
-            setFragments(3);
-        }
 
+        }else if (option.equals("bar")){
+
+        }else if (option.equals("tour")){
+
+        }
+        title = getString(R.string.places);
+        nameTab1 = getString(R.string.hotel_title);
+        nameTab2 = getString(R.string.restaurant_title);
+        nameTab3 = getString(R.string.tour_title);
+        tab1Fragment = new HotelListFragment();
+        tab2Fragment = new RestaurantListFragment();
+        tab3Fragment = new AttractionListFragment();
 
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);
@@ -126,7 +121,7 @@ public class PlacesActivity extends DrawerActivity {
         }
 
         @Override
-        public Fragment getItem(int position) {
+        public ListFragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
@@ -171,22 +166,6 @@ public class PlacesActivity extends DrawerActivity {
 
     /** Method to set fragments to every tab **/
     private void setFragments(int option){
-        switch (option){
-            case 1:
-                tab1Fragment = new HotelOneFragment();
-                tab2Fragment = new HotelTwoFragment();
-                tab3Fragment = new HotelThreeFragment();
-                break;
-            case 2:
-                tab1Fragment = new RestaurantOneFragment();
-                tab2Fragment = new RestaurantTwoFragment();
-                tab3Fragment = new RestaurantThreeFragment();
-                break;
-            case 3:
-                tab1Fragment = new AttractionOneFragment();
-                tab2Fragment = new AttractionTwoFragment();
-                tab3Fragment = new AttractionThreeFragment();
-                break;
-        }
+
     }
 }
