@@ -58,4 +58,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="sites">Sites</string>
     <string name="places">Places of Interest</string>
+    <string name="arboletes_info">
+        Arboletes is a town and municipality in the subregion of Urabá in Antioquia Department, Colombia.
+
+        The municipality is bounded by the Caribbean Sea to the north, the department of Córdoba to the north and east,
+        the municipality of San Pedro de Urabá to the south and west, and the municipalities of Turbo and Necoclí.
+    </string>
 </resources>
