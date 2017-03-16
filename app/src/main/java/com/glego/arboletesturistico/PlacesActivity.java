@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 
 public class PlacesActivity extends DrawerActivity {
@@ -19,12 +20,7 @@ public class PlacesActivity extends DrawerActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    private ViewPager mViewPager;
 
     /**
      *  Strings to store names of bars, hotels and tourist attractions
@@ -50,17 +46,18 @@ public class PlacesActivity extends DrawerActivity {
 
         // Get extra from home in order to know which option was selected
         extras = getIntent().getExtras();
-        option = extras.getString("option");
+        //option = extras.getString("option");
 
         // Set strings values depending on selected option
-        if (option.equals("hotel")){
+        /*if (option.equals("hotel")){
 
         }else if (option.equals("bar")){
 
         }else if (option.equals("tour")){
 
-        }
+        }*/
         title = getString(R.string.places);
+        setToolbarTitle(title);
         nameTab1 = getString(R.string.hotel_title);
         nameTab2 = getString(R.string.restaurant_title);
         nameTab3 = getString(R.string.tour_title);
@@ -68,45 +65,28 @@ public class PlacesActivity extends DrawerActivity {
         tab2Fragment = new RestaurantListFragment();
         tab3Fragment = new AttractionListFragment();
 
-        toolbar.setTitle(title);
-        setSupportActionBar(toolbar);
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        // Check that the activity is using the layout version with
+        // the fragment_container FrameLayout
+        if (findViewById(R.id.fragment_container) != null) {
 
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+            // However, if we're being restored from a previous state,
+            // then we don't need to do anything and should return or else
+            // we could end up with overlapping fragments.
+            if (savedInstanceState != null) {
+                return;
+            }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
-    }
+            // Create a new Fragment to be placed in the activity layout
+            HotelListFragment firstFragment = new HotelListFragment();
 
+            // In case this activity was started with special instructions from an
+            // Intent, pass the Intent's extras to the fragment as arguments
+            //firstFragment.setArguments(getIntent().getExtras());
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu_home; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_places, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.home_menu) {
-            Intent intent = new Intent(PlacesActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
+            // Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
         }
-
-        return super.onOptionsItemSelected(item);
-    }*/
+    }
 
 
 
@@ -114,7 +94,7 @@ public class PlacesActivity extends DrawerActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    /*public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -154,7 +134,7 @@ public class PlacesActivity extends DrawerActivity {
             }
             return null;
         }
-    }
+    }*/
 
     /** Method to set names to all string variables **/
     private void setStringNames(String _title, String _nameTab1, String _nameTab2, String _nameTab3){
@@ -167,5 +147,17 @@ public class PlacesActivity extends DrawerActivity {
     /** Method to set fragments to every tab **/
     private void setFragments(int option){
 
+    }
+
+    @Override
+    protected void onPause() {
+        Toast.makeText(this, "Pause state", Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        Toast.makeText(this, "Resume state", Toast.LENGTH_SHORT).show();
+        super.onResume();
     }
 }
