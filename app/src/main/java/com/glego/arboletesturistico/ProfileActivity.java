@@ -30,6 +30,11 @@ public class ProfileActivity extends DrawerActivity{
         emailTextView.setText(extras.getString("email"));
     }
 
+    @Override
+    protected String toolbarTitle() {
+        return getString(R.string.profile);
+    }
+
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_profile, menu);

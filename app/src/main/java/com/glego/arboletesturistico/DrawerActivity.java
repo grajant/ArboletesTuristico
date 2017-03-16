@@ -115,16 +115,12 @@ public class DrawerActivity extends AppCompatActivity
         Intent intent;
         switch (item.getItemId()){
             case R.id.home_menu:
-                intent = new Intent(this, MainActivity.class);
-                intent.putExtra("username", extras.getString("username"));
-                intent.putExtra("email", extras.getString("email"));
+                intent = putExtras(MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.menu_profile:
-                intent = new Intent(this, ProfileActivity.class);
-                intent.putExtra("username", extras.getString("username"));
-                intent.putExtra("email", extras.getString("email"));
+                intent = putExtras(ProfileActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -134,20 +130,17 @@ public class DrawerActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.hotels_menu:
-                intent = new Intent(this, HotelsActivity.class);
-                //intent.putExtra("option", "hotel");
+                intent = putExtras(HotelsActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.restaurants_menu:
-                intent = new Intent(this, PlacesActivity.class);
-                intent.putExtra("option", "bar");
+                intent = putExtras(RestaurantsActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.tourist_menu:
-                intent = new Intent(this, PlacesActivity.class);
-                intent.putExtra("option", "tour");
+                intent = putExtras(AttractionsActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -155,5 +148,12 @@ public class DrawerActivity extends AppCompatActivity
 
         fullLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private Intent putExtras(Class className){
+        Intent intent = new Intent(this, className);
+        intent.putExtra("username", extras.getString("username"));
+        intent.putExtra("email", extras.getString("email"));
+        return intent;
     }
 }

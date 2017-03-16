@@ -31,7 +31,13 @@
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HotelsActivity"
+        <activity
+            android:name=".HotelsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestaurantsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AttractionsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
