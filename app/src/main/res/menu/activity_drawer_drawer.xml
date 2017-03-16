@@ -4,11 +4,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/home_menu"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/home" />
         <item
             android:id="@+id/menu_profile"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/myProfile" />
     </group>
     <group android:checkableBehavior="none">
@@ -16,15 +16,15 @@
             <menu>
                 <item
                     android:id="@+id/hotels_menu"
-                    android:icon="@drawable/ic_menu_share"
+                    android:icon="@drawable/ic_local_hotel_black_24dp"
                     android:title="@string/hotel_title" />
                 <item
                     android:id="@+id/restaurants_menu"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/ic_restaurant_black_24dp"
                     android:title="@string/restaurant_title" />
                 <item
                     android:id="@+id/tourist_menu"
-                    android:icon="@drawable/ic_menu_send"
+                    android:icon="@drawable/ic_local_play_black_24dp"
                     android:title="@string/tour_title" />
             </menu>
         </item>
@@ -33,7 +33,7 @@
     <group android:id="@+id/bottom">
         <item
             android:id="@+id/logout_menu"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:title="@string/logout" />
     </group>
 

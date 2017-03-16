@@ -46,9 +46,10 @@ public class DrawerActivity extends AppCompatActivity
          * option or not.
          */
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (useToolbar())
+        if (useToolbar()){
+            toolbar.setTitle(toolbarTitle());
             setSupportActionBar(toolbar);
-        else
+        }else
             toolbar.setVisibility(View.GONE);
 
         /** Set the Drawer toggle **/
@@ -60,6 +61,10 @@ public class DrawerActivity extends AppCompatActivity
         fullLayout.addDrawerListener(toggle);
 
         toggle.syncState();
+    }
+
+    protected String toolbarTitle(){
+        return "";
     }
 
     /**
@@ -129,8 +134,8 @@ public class DrawerActivity extends AppCompatActivity
                 finish();
                 break;
             case R.id.hotels_menu:
-                intent = new Intent(this, PlacesActivity.class);
-                intent.putExtra("option", "hotel");
+                intent = new Intent(this, HotelsActivity.class);
+                //intent.putExtra("option", "hotel");
                 startActivity(intent);
                 finish();
                 break;

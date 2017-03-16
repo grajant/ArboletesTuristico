@@ -10,9 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SplashScreenActivity">
@@ -24,7 +22,7 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PlacesActivity"
             android:label="@string/title_activity_places"
@@ -32,6 +30,8 @@
         <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HotelsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
