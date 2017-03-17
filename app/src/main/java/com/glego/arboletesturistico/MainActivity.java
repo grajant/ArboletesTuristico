@@ -1,10 +1,9 @@
 package com.glego.arboletesturistico;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
+
 
 public class MainActivity extends DrawerActivity {
 
@@ -16,6 +15,9 @@ public class MainActivity extends DrawerActivity {
         setContentView(R.layout.activity_main);
 
         extras = getIntent().getExtras();
+
+        MenuItem item = navigationView.getMenu().getItem(0);
+        item.setChecked(true);
     }
 
     @Override

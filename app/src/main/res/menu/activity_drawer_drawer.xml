@@ -11,9 +11,11 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/myProfile" />
     </group>
-    <group android:checkableBehavior="none">
-        <item android:title="@string/sites">
-            <menu>
+
+    <item android:title="@string/places">
+
+        <menu>
+            <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/hotels_menu"
                     android:icon="@drawable/ic_local_hotel_black_24dp"
@@ -26,9 +28,11 @@
                     android:id="@+id/tourist_menu"
                     android:icon="@drawable/ic_local_play_black_24dp"
                     android:title="@string/tour_title" />
-            </menu>
-        </item>
-    </group>
+            </group>
+        </menu>
+
+    </item>
+
 
     <group android:id="@+id/bottom">
         <item

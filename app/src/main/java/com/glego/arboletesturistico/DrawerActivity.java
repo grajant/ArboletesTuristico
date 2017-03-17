@@ -15,12 +15,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-public class DrawerActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class DrawerActivity extends AppCompatActivity {
 
-    private DrawerLayout fullLayout;
+    protected DrawerLayout fullLayout;
     protected Bundle extras;
     protected Toolbar toolbar;
+    protected NavigationView navigationView;
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
@@ -51,8 +51,12 @@ public class DrawerActivity extends AppCompatActivity
             toolbar.setVisibility(View.GONE);
 
         /** Set the Drawer toggle **/
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        if (navigationView != null) {
+            setupNavigationDrawerContent();
+        }
+
+        setupNavigationDrawerContent();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, fullLayout, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -65,9 +69,6 @@ public class DrawerActivity extends AppCompatActivity
         return "";
     }
 
-    protected void setToolbarTitle(String title){
-        toolbar.setTitle(title);
-    }
 
     /**
      * Helper method that can be used by child classes to
@@ -111,45 +112,56 @@ public class DrawerActivity extends AppCompatActivity
     }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        Intent intent;
-        switch (item.getItemId()){
-            case R.id.home_menu:
-                intent = putExtras(MainActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.menu_profile:
-                intent = putExtras(ProfileActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.logout_menu:
-                intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.hotels_menu:
-                intent = putExtras(PlacesActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.restaurants_menu:
-                intent = putExtras(RestaurantsActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.tourist_menu:
-                intent = putExtras(AttractionsActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-        }
+    protected void setupNavigationDrawerContent() {
 
-        fullLayout.closeDrawer(GravityCompat.START);
-        return true;
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem item) {
+                        // Handle navigation view item clicks here.
+                        Intent intent;
+                        switch (item.getItemId()) {
+                            case R.id.home_menu:
+                                item.setChecked(true);
+                                intent = putExtras(MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                            case R.id.menu_profile:
+                                item.setChecked(true);
+                                intent = putExtras(ProfileActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                            case R.id.logout_menu:
+                                item.setChecked(true);
+                                intent = new Intent(DrawerActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                            case R.id.hotels_menu:
+                                item.setChecked(true);
+                                intent = putExtras(PlacesActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                            case R.id.restaurants_menu:
+                                item.setChecked(true);
+                                intent = putExtras(PlacesActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                            case R.id.tourist_menu:
+                                item.setChecked(true);
+                                intent = putExtras(PlacesActivity.class);
+                                startActivity(intent);
+                                finish();
+                                break;
+                        }
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        return true;
+                    }
+                });
     }
 
     private Intent putExtras(Class className){

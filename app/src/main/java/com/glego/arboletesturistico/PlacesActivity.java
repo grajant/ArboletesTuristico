@@ -1,13 +1,20 @@
 package com.glego.arboletesturistico;
 
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
-import android.support.design.widget.TabLayout;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v4.view.GravityCompat;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.SubMenu;
 import android.widget.Toast;
+
+import com.glego.arboletesturistico.Fragments.AttractionListFragment;
+import com.glego.arboletesturistico.Fragments.HotelListFragment;
+import com.glego.arboletesturistico.Fragments.RestaurantListFragment;
 
 
 public class PlacesActivity extends DrawerActivity {
@@ -20,8 +27,8 @@ public class PlacesActivity extends DrawerActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-
-
+    private static int menu_places = 2;
+    private static int menu_hotel = 0;
     /**
      *  Strings to store names of bars, hotels and tourist attractions
      *  */
@@ -32,12 +39,12 @@ public class PlacesActivity extends DrawerActivity {
 
     private String option;
 
+    private MenuItem menuItem;
     /**
      * Fragments attributes to replace depending on what option has to be displayed
      */
-    private ListFragment tab1Fragment;
-    private ListFragment tab2Fragment;
-    private ListFragment tab3Fragment;
+    private ListFragment listFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +63,15 @@ public class PlacesActivity extends DrawerActivity {
         }else if (option.equals("tour")){
 
         }*/
-        title = getString(R.string.places);
-        setToolbarTitle(title);
+
         nameTab1 = getString(R.string.hotel_title);
         nameTab2 = getString(R.string.restaurant_title);
         nameTab3 = getString(R.string.tour_title);
-        tab1Fragment = new HotelListFragment();
-        tab2Fragment = new RestaurantListFragment();
-        tab3Fragment = new AttractionListFragment();
+        if (navigationView != null) {
+            setupNavigationDrawerContent();
+        }
 
+        setupNavigationDrawerContent();
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
         if (findViewById(R.id.fragment_container) != null) {
@@ -85,10 +92,43 @@ public class PlacesActivity extends DrawerActivity {
 
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
+            SubMenu subMenu = navigationView.getMenu().getItem(menu_places).getSubMenu();
+            menuItem = subMenu.getItem(menu_hotel);
+            menuItem.setChecked(true);
         }
     }
 
+    @Override
+    protected void setupNavigationDrawerContent() {
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
 
+                switch (item.getItemId())
+                {
+                    case R.id.hotels_menu:
+                        menuItem.setChecked(false);
+                        item.setChecked(true);
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        setFragments(0);
+                        break;
+                    case R.id.restaurants_menu:
+                        menuItem.setChecked(false);
+                        item.setChecked(true);
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        setFragments(1);
+                        break;
+                    case R.id.tourist_menu:
+                        menuItem.setChecked(false);
+                        item.setChecked(true);
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        setFragments(2);
+                        break;
+                }
+                return true;
+            }
+        });
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -145,8 +185,31 @@ public class PlacesActivity extends DrawerActivity {
     }
 
     /** Method to set fragments to every tab **/
-    private void setFragments(int option){
-
+    private void setFragments(int position){
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+        switch (position) {
+            case 0:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                listFragment = new HotelListFragment();
+                fragmentTransaction.replace(R.id.fragment_container, listFragment);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                listFragment = new RestaurantListFragment();
+                fragmentTransaction.replace(R.id.fragment_container, listFragment);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                listFragment = new AttractionListFragment();
+                fragmentTransaction.replace(R.id.fragment_container, listFragment);
+                fragmentTransaction.commit();
+        }
     }
 
     @Override
@@ -157,7 +220,21 @@ public class PlacesActivity extends DrawerActivity {
 
     @Override
     protected void onResume() {
+
+
         Toast.makeText(this, "Resume state", Toast.LENGTH_SHORT).show();
         super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        Toast.makeText(this, "Stop state", Toast.LENGTH_SHORT).show();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(this, "Destroyed state", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
     }
 }
