@@ -1,5 +1,7 @@
 package com.glego.arboletesturistico;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
@@ -8,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.os.Bundle;
+import android.transition.Slide;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.widget.Toast;
@@ -29,13 +32,12 @@ public class PlacesActivity extends DrawerActivity {
      */
     private static int menu_places = 2;
     private static int menu_hotel = 0;
+    private static int menu_restaurant = 1;
+    private static int menu_attractions = 2;
     /**
      *  Strings to store names of bars, hotels and tourist attractions
      *  */
-    private String title;
-    private String nameTab1;
-    private String nameTab2;
-    private String nameTab3;
+    private int position;
 
     private String option;
 
@@ -45,7 +47,6 @@ public class PlacesActivity extends DrawerActivity {
      */
     private ListFragment listFragment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,20 +54,8 @@ public class PlacesActivity extends DrawerActivity {
 
         // Get extra from home in order to know which option was selected
         extras = getIntent().getExtras();
-        //option = extras.getString("option");
+        option = extras.getString("option");
 
-        // Set strings values depending on selected option
-        /*if (option.equals("hotel")){
-
-        }else if (option.equals("bar")){
-
-        }else if (option.equals("tour")){
-
-        }*/
-
-        nameTab1 = getString(R.string.hotel_title);
-        nameTab2 = getString(R.string.restaurant_title);
-        nameTab3 = getString(R.string.tour_title);
         if (navigationView != null) {
             setupNavigationDrawerContent();
         }
@@ -84,18 +73,28 @@ public class PlacesActivity extends DrawerActivity {
             }
 
             // Create a new Fragment to be placed in the activity layout
-            HotelListFragment firstFragment = new HotelListFragment();
-
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            //firstFragment.setArguments(getIntent().getExtras());
+            // Set fragment depending on selected option
+            if (option.equals("hotel")){
+                listFragment = new HotelListFragment();
+                checkMenuOption(menu_hotel);
+            }else if (option.equals("restaurant")){
+                listFragment = new RestaurantListFragment();
+                checkMenuOption(menu_restaurant);
+            }else if (option.equals("tour")){
+                listFragment = new AttractionListFragment();
+                checkMenuOption(menu_attractions);
+            }
 
             // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, firstFragment).commit();
-            SubMenu subMenu = navigationView.getMenu().getItem(menu_places).getSubMenu();
-            menuItem = subMenu.getItem(menu_hotel);
-            menuItem.setChecked(true);
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, listFragment).commit();
+            setupWindowAnimations();
         }
+    }
+
+    private void checkMenuOption(int menu){
+        SubMenu subMenu = navigationView.getMenu().getItem(menu_places).getSubMenu();
+        menuItem = subMenu.getItem(menu);
+        menuItem.setChecked(true);
     }
 
     @Override
@@ -103,26 +102,46 @@ public class PlacesActivity extends DrawerActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-
+                Handler handler = new Handler();
                 switch (item.getItemId())
                 {
+                    case R.id.home_menu:
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        item.setChecked(true);
+                        intent = putExtras(MainActivity.class);
+                        handler.postDelayed(delayActivity, 150);    // Start activity after some delay
+                        break;
+                    case R.id.menu_profile:
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        item.setChecked(true);
+                        intent = putExtras(ProfileActivity.class);
+                        handler.postDelayed(delayActivity, 150);    // Start activity after some delay
+                        break;
+                    case R.id.logout_menu:
+                        fullLayout.closeDrawer(GravityCompat.START);
+                        intent = new Intent(PlacesActivity.this, LoginActivity.class);
+                        handler.postDelayed(delayActivity, 150);    // Start activity after some delay
+                        break;
                     case R.id.hotels_menu:
+                        position = 0;
                         menuItem.setChecked(false);
                         item.setChecked(true);
                         fullLayout.closeDrawer(GravityCompat.START);
-                        setFragments(0);
+                        handler.postDelayed(delay, 300);
                         break;
                     case R.id.restaurants_menu:
+                        position = 1;
                         menuItem.setChecked(false);
                         item.setChecked(true);
                         fullLayout.closeDrawer(GravityCompat.START);
-                        setFragments(1);
+                        handler.postDelayed(delay, 300);
                         break;
                     case R.id.tourist_menu:
+                        position = 2;
                         menuItem.setChecked(false);
                         item.setChecked(true);
                         fullLayout.closeDrawer(GravityCompat.START);
-                        setFragments(2);
+                        handler.postDelayed(delay, 300);
                         break;
                 }
                 return true;
@@ -130,59 +149,19 @@ public class PlacesActivity extends DrawerActivity {
         });
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    /*public class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
+    private Runnable delayActivity = new Runnable() {
         @Override
-        public ListFragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position){
-                case 0:
-                    return tab1Fragment;
-                case 1:
-                    return tab2Fragment;
-                case 2:
-                    return tab3Fragment;
-                default:
-                    return null;
-            }
+        public void run() {
+            startActivity(intent);
+            finish();
         }
-
+    };
+    protected Runnable delay = new Runnable() {
         @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
+        public void run() {
+            setFragments(position);
         }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return nameTab1;
-                case 1:
-                    return nameTab2;
-                case 2:
-                    return nameTab3;
-            }
-            return null;
-        }
-    }*/
-
-    /** Method to set names to all string variables **/
-    private void setStringNames(String _title, String _nameTab1, String _nameTab2, String _nameTab3){
-        title = _title;
-        nameTab1 = _nameTab1;
-        nameTab2 = _nameTab2;
-        nameTab3 = _nameTab3;
-    }
+    };
 
     /** Method to set fragments to every tab **/
     private void setFragments(int position){
@@ -212,29 +191,14 @@ public class PlacesActivity extends DrawerActivity {
         }
     }
 
-    @Override
-    protected void onPause() {
-        Toast.makeText(this, "Pause state", Toast.LENGTH_SHORT).show();
-        super.onPause();
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setEnterTransition(slide);
     }
 
     @Override
     protected void onResume() {
-
-
-        Toast.makeText(this, "Resume state", Toast.LENGTH_SHORT).show();
         super.onResume();
-    }
-
-    @Override
-    protected void onStop() {
-        Toast.makeText(this, "Stop state", Toast.LENGTH_SHORT).show();
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        Toast.makeText(this, "Destroyed state", Toast.LENGTH_SHORT).show();
-        super.onDestroy();
     }
 }

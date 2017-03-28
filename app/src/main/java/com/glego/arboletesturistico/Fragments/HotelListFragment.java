@@ -1,5 +1,6 @@
 package com.glego.arboletesturistico.Fragments;
 
+import android.content.Intent;
 import android.support.v4.app.ListFragment;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
+import com.glego.arboletesturistico.DetailsActivity;
 import com.glego.arboletesturistico.DrawerActivity;
 import com.glego.arboletesturistico.ListPlaces;
 import com.glego.arboletesturistico.MyAdapter;
@@ -39,6 +41,8 @@ public class HotelListFragment extends ListFragment implements OnItemClickListen
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), DetailsActivity.class);
+        intent.putExtra("option", "hotel");
+        startActivity(intent);
     }
 }

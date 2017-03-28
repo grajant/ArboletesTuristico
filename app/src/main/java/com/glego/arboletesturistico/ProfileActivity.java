@@ -28,6 +28,9 @@ public class ProfileActivity extends DrawerActivity{
 
         usernameTextView.setText(extras.getString("username"));
         emailTextView.setText(extras.getString("email"));
+
+        MenuItem item = navigationView.getMenu().getItem(1);
+        item.setChecked(true);
     }
 
     @Override

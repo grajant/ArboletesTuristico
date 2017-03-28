@@ -3,7 +3,9 @@ package com.glego.arboletesturistico;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.LayoutRes;
+import android.text.Layout;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class DrawerActivity extends AppCompatActivity {
 
@@ -63,6 +66,9 @@ public class DrawerActivity extends AppCompatActivity {
         fullLayout.addDrawerListener(toggle);
 
         toggle.syncState();
+
+        TextView email = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView);
+        email.setText("guillermo.grajales@udea.edu.co");
     }
 
     protected String toolbarTitle(){
@@ -89,28 +95,6 @@ public class DrawerActivity extends AppCompatActivity {
         }
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.drawer, menu);
-        return true;
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
     @SuppressWarnings("StatementWithEmptyBody")
     protected void setupNavigationDrawerContent() {
 
@@ -119,52 +103,65 @@ public class DrawerActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         // Handle navigation view item clicks here.
-                        Intent intent;
+                        //Intent intent;
+                        Handler handler = new Handler();
                         switch (item.getItemId()) {
                             case R.id.home_menu:
-                                item.setChecked(true);
-                                intent = putExtras(MainActivity.class);
-                                startActivity(intent);
-                                finish();
+                                fullLayout.closeDrawer(GravityCompat.START);
+                                // Check whether current activity is Home
+                                if (!item.isChecked()) {
+                                    intent = putExtras(MainActivity.class);
+                                    handler.postDelayed(delay, 150);
+                                    item.setChecked(true);      // Start activity after some delay
+                                }
                                 break;
                             case R.id.menu_profile:
-                                item.setChecked(true);
-                                intent = putExtras(ProfileActivity.class);
-                                startActivity(intent);
-                                finish();
+                                fullLayout.closeDrawer(GravityCompat.START);
+                                // Check whether current activity is Profile
+                                if (!item.isChecked()) {
+                                    intent = putExtras(ProfileActivity.class);
+                                    handler.postDelayed(delay, 150);    // Start activity after some delay
+                                    item.setChecked(true);
+                                }
                                 break;
                             case R.id.logout_menu:
+                                fullLayout.closeDrawer(GravityCompat.START);
                                 item.setChecked(true);
                                 intent = new Intent(DrawerActivity.this, LoginActivity.class);
-                                startActivity(intent);
-                                finish();
+                                handler.postDelayed(delay, 150);    // Start activity after some delay
                                 break;
                             case R.id.hotels_menu:
-                                item.setChecked(true);
+                                fullLayout.closeDrawer(GravityCompat.START);
                                 intent = putExtras(PlacesActivity.class);
-                                startActivity(intent);
-                                finish();
+                                intent.putExtra("option", "hotel");
+                                handler.postDelayed(delay, 150);    // Start activity after some delay
                                 break;
                             case R.id.restaurants_menu:
-                                item.setChecked(true);
+                                fullLayout.closeDrawer(GravityCompat.START);
                                 intent = putExtras(PlacesActivity.class);
-                                startActivity(intent);
-                                finish();
+                                intent.putExtra("option", "restaurant");
+                                handler.postDelayed(delay, 150);    // Start activity after some delay
                                 break;
                             case R.id.tourist_menu:
-                                item.setChecked(true);
+                                fullLayout.closeDrawer(GravityCompat.START);
                                 intent = putExtras(PlacesActivity.class);
-                                startActivity(intent);
-                                finish();
+                                intent.putExtra("option", "tour");
+                                handler.postDelayed(delay, 150);    // Start activity after some delay
                                 break;
                         }
-                        fullLayout.closeDrawer(GravityCompat.START);
                         return true;
                     }
                 });
     }
-
-    private Intent putExtras(Class className){
+    protected Intent intent;
+    protected Runnable delay = new Runnable() {
+        @Override
+        public void run() {
+            startActivity(intent);
+            finish();
+        }
+    };
+    protected Intent putExtras(Class className){
         Intent intent = new Intent(this, className);
         intent.putExtra("username", extras.getString("username"));
         intent.putExtra("email", extras.getString("email"));
