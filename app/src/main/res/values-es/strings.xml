@@ -37,8 +37,34 @@
     <string name="tour2">Sitio 2</string>
     <string name="tour3">Sitio 3</string>
     <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
+    <!-- TODO add new strings on english language -->
+    <string name="h_mirador_description">
+        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas de nuestro municipio.
+        Ingreso: 15:00 horas, Salida: 13:00 horas, Recepción nocturna disponible,
+        Idiomas: Español / Ingles, Wifi, Zona Humeda, Aire acondicionado
+    </string>
+    <string name="h_mirador_short_info">
+        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas...
+    </string>
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
+    <string name="h_riviera_description">
+        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe antioqueño, tiene el gusto de
+        ofrecer el mejor servicio de alojamiento y diversión en la Región Caribe del departamento de Antioquia,
+        estratégicamente ubicado a la entrada del municipio de Arboletes frente al Mar, con la mejor atención e instalaciones.
+    </string>
+    <string name="h_riviera_short_info">
+        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe...
+    </string>
     <string name="hotel_retiro">RETIRO</string>
+    <string name="h_retiro_description">
+        Frente al mar en el municipio de Arboletes Antioquia,a 5 minutos de la población
+        y a 15 minutos del volcán de lodo. Está dotada de zonas verdes especiales para CAMPING, piscina, baños,
+        2 kioscos para eventos, cocineta, asadero, parqueadero, hamacas. Es lugar ideal para el descanso placentero.
+    </string>
+    <string name="h_retiro_short_info">
+        Frente al mar en el municipio de Arboletes Antioquia...
+    </string>
+    <!-- END TODO ************************************* -->
     <string name="hotel_title">Hoteles</string>
     <string name="restaurant_title">Restaurantes</string>
     <string name="restaurant_mirador">RESTAURANTE MIRADOR</string>
@@ -57,4 +83,10 @@
         y por el oeste con los municipios de Necoclí y San Juan de Urabá.
     </string>
     <string name="profile">Perfil</string>
+    
+    <string-array name="hotels_description">
+        <item>@string/h_mirador_description</item>
+        <item>@string/h_riviera_description</item>
+        <item>@string/h_retiro_short_info</item>
+    </string-array>
 </resources>

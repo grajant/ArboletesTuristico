@@ -39,9 +39,9 @@ public class ListPlaces {
 
     public static ArrayList<ListPlaces> hotelsValues(Context context) {
         ArrayList<ListPlaces> users = new ArrayList<>();
-        users.add(new ListPlaces(context.getString(R.string.hotel_mirador), "Primera banda","15.000", R.drawable.hotel_mirador));
-        users.add(new ListPlaces(context.getString(R.string.hotel_riviera), "Segunda banda","15.000" , R.drawable.hotel_retiro));
-        users.add(new ListPlaces(context.getString(R.string.hotel_retiro), "Multiplicador","15.000", R.drawable.hotel_riviera));
+        users.add(new ListPlaces(context.getString(R.string.hotel_mirador), context.getString(R.string.h_mirador_short_info),"15.000", R.drawable.hotel_mirador));
+        users.add(new ListPlaces(context.getString(R.string.hotel_riviera), context.getString(R.string.h_riviera_short_info),"15.000" , R.drawable.hotel_riviera));
+        users.add(new ListPlaces(context.getString(R.string.hotel_retiro), context.getString(R.string.h_retiro_short_info),"15.000", R.drawable.hotel_retiro));
         return users;
     }
 

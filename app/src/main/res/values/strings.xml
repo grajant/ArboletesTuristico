@@ -41,8 +41,32 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hotel_mirador">BOUTIQUE EL MIRADOR</string>
+    <!-- TODO add new strings on english language -->
+    <string name="h_mirador_description">
+        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas de nuestro municipio. Ingreso: 15:00 horas, Salida: 13:00 horas, Recepción nocturna disponible, Idiomas: Español / Ingles, Wifi, Zona Humeda, Aire acondicionado
+    </string>
+    <string name="h_mirador_short_info">
+        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas...
+    </string>
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
+    <string name="h_riviera_description">
+        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe antioqueño, tiene el gusto de
+        ofrecer el mejor servicio de alojamiento y diversión en la Región Caribe del departamento de Antioquia,
+        estratégicamente ubicado a la entrada del municipio de Arboletes frente al Mar, con la mejor atención e instalaciones.
+    </string>
+    <string name="h_riviera_short_info">
+        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe...
+    </string>
     <string name="hotel_retiro">RETIRO</string>
+    <string name="h_retiro_description">
+        Frente al mar en el municipio de Arboletes Antioquia,a 5 minutos de la población
+        y a 15 minutos del volcán de lodo. Está dotada de zonas verdes especiales para CAMPING, piscina, baños,
+        2 kioscos para eventos, cocineta, asadero, parqueadero, hamacas. Es lugar ideal para el descanso placentero.
+    </string>
+    <string name="h_retiro_short_info">
+        Frente al mar en el municipio de Arboletes Antioquia...
+    </string>
+    <!-- END TODO ************************************* -->
     <string name="hotel_title">Hotels</string>
     <string name="restaurant_title">Restaurants</string>
     <string name="tour_title">Tourist Attractions</string>
@@ -65,4 +89,23 @@
         the municipality of San Pedro de Urabá to the south and west, and the municipalities of Turbo and Necoclí.
     </string>
     <string name="profile">Profile</string>
+
+    <string-array name="hotels_description">
+        <item>@string/h_mirador_description</item>
+        <item>@string/h_riviera_description</item>
+        <item>@string/h_retiro_short_info</item>
+    </string-array>
+
+    <string name="hello">
+        <![CDATA[
+        <html>
+            <head></head>
+            <body style="text-align:justify;color:gray;">
+                Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Nunc pellentesque, urna
+                nec hendrerit pellentesque, risus massa
+            </body>
+        </html>
+        ]]>
+    </string>
 </resources>

@@ -1,6 +1,9 @@
 package com.glego.arboletesturistico;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +11,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bluejamesbond.text.DocumentView;
+import com.bluejamesbond.text.style.TextAlignment;
+
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -30,27 +38,38 @@ public class DetailsActivity extends AppCompatActivity {
         position = extras.getInt("position");
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         titleTextV = (TextView) findViewById(R.id.item_title);
         imageView = (ImageView) findViewById(R.id.image);
 
         switch (option){
             case "hotel":
-                displayData(R.string.hotel_mirador, R.string.hotel_retiro, R.string.hotel_riviera,
-                        R.drawable.hotel_mirador, R.drawable.hotel_retiro, R.drawable.hotel_riviera);
+                displayData(R.string.hotel_mirador, R.string.hotel_riviera, R.string.hotel_retiro,
+                        R.drawable.hotel_mirador, R.drawable.hotel_riviera, R.drawable.hotel_retiro);
+                toolbar.setTitle(R.string.hotel_title);
+
+                WebView view = (WebView) findViewById(R.id.textContent);
+                String text;
+                text = "<html><body><p align=\"justify\">";
+                text+= getString(R.string.h_mirador_description);
+                text+= "</p></body></html>";
+                view.loadData(getString(R.string.hello), "text/html; charset=utf-8", "utf-8");
+                view.setBackgroundColor(0x00000000);
                 break;
             case "restaurant":
                 displayData(R.string.restaurant_mirador, R.string.restaurant_nautilus, R.string.restaurant_punto,
                         R.drawable.restaurant_mirador, R.drawable.restaurant_nautiluz, R.drawable.restaurant_punto_sabor);
+                toolbar.setTitle(R.string.restaurant_title);
                 break;
             case "tour":
                 displayData(R.string.attraction_volcano, R.string.attraction_church, R.string.attraction_beach,
                         R.drawable.volcano, R.drawable.church, R.drawable.beaches);
+                toolbar.setTitle(R.string.tour_title);
                 break;
         }
-
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /*if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(colorPrimaryDark);
         }*/
@@ -72,15 +91,15 @@ public class DetailsActivity extends AppCompatActivity {
         switch (position){
             case 0:
                 titleTextV.setText(getString(item1));
-                imageView.setBackgroundResource(imageId1);
+                imageView.setImageResource(imageId1);
                 break;
             case 1:
                 titleTextV.setText(getString(item2));
-                imageView.setBackgroundResource(imageId2);
+                imageView.setImageResource(imageId2);
                 break;
             case 2:
                 titleTextV.setText(getString(item3));
-                imageView.setBackgroundResource(imageId3);
+                imageView.setImageResource(imageId3);
                 break;
         }
     }
