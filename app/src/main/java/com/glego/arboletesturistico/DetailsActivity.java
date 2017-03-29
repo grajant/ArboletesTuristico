@@ -24,9 +24,11 @@ public class DetailsActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private String option;
+    private String[] description;
     private int position;
 
     private TextView titleTextV;
+    private TextViewEx descriptionTextV;
     private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,28 +43,35 @@ public class DetailsActivity extends AppCompatActivity {
 
 
         titleTextV = (TextView) findViewById(R.id.item_title);
+        descriptionTextV = (TextViewEx) findViewById(R.id.description);
         imageView = (ImageView) findViewById(R.id.image);
 
         switch (option){
             case "hotel":
+                description = new String[3];
+                description = getResources().getStringArray(R.array.hotels_description);
                 displayData(R.string.hotel_mirador, R.string.hotel_riviera, R.string.hotel_retiro,
-                        R.drawable.hotel_mirador, R.drawable.hotel_riviera, R.drawable.hotel_retiro);
+                        R.drawable.h_mirador_detail, R.drawable.h_riviera_detail, R.drawable.h_retiro_detail);
                 toolbar.setTitle(R.string.hotel_title);
 
-                WebView view = (WebView) findViewById(R.id.textContent);
+                /*WebView view = (WebView) findViewById(R.id.textContent);
                 String text;
                 text = "<html><body><p align=\"justify\">";
                 text+= getString(R.string.h_mirador_description);
                 text+= "</p></body></html>";
                 view.loadData(getString(R.string.hello), "text/html; charset=utf-8", "utf-8");
-                view.setBackgroundColor(0x00000000);
+                view.setBackgroundColor(0x00000000);*/
                 break;
             case "restaurant":
+                description = new String[3];
+                description = getResources().getStringArray(R.array.restaurants_description);
                 displayData(R.string.restaurant_mirador, R.string.restaurant_nautilus, R.string.restaurant_punto,
-                        R.drawable.restaurant_mirador, R.drawable.restaurant_nautiluz, R.drawable.restaurant_punto_sabor);
+                        R.drawable.restaurant_mirador, R.drawable.restaurant_nautiluz, R.drawable.r_punto_detail);
                 toolbar.setTitle(R.string.restaurant_title);
                 break;
             case "tour":
+                description = new String[3];
+                description = getResources().getStringArray(R.array.attractions_description);
                 displayData(R.string.attraction_volcano, R.string.attraction_church, R.string.attraction_beach,
                         R.drawable.volcano, R.drawable.church, R.drawable.beaches);
                 toolbar.setTitle(R.string.tour_title);
@@ -92,14 +101,17 @@ public class DetailsActivity extends AppCompatActivity {
             case 0:
                 titleTextV.setText(getString(item1));
                 imageView.setImageResource(imageId1);
+                descriptionTextV.setText(description[position]);
                 break;
             case 1:
                 titleTextV.setText(getString(item2));
                 imageView.setImageResource(imageId2);
+                descriptionTextV.setText(description[position]);
                 break;
             case 2:
                 titleTextV.setText(getString(item3));
                 imageView.setImageResource(imageId3);
+                descriptionTextV.setText(description[position]);
                 break;
         }
     }

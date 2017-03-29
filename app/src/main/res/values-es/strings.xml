@@ -67,12 +67,67 @@
     <!-- END TODO ************************************* -->
     <string name="hotel_title">Hoteles</string>
     <string name="restaurant_title">Restaurantes</string>
+    <string name="tour_title">Lugares turísticos</string>
     <string name="restaurant_mirador">RESTAURANTE MIRADOR</string>
+    <string name="r_mirador_description">
+        Disfruta en nuestro restaurante de los más exquisitos platos de mar, típidos de la región y el resto del país, postres y mucho más, dirigidos por nuestro chef.
+        En nuestro bar podrá disfrutar de los más exquisitos cocteles, bebidas y licores nacionales e importados.
+    </string>
+    <string name="r_mirador_short_info">
+        Disfruta en nuestro restaurante de los más exquisitos platos de mar...
+    </string>
+    <string name="r_mirador_short_detail">Alta calidad</string>
     <string name="restaurant_punto">RESTAURANTE EL PUNTO DEL SABOR</string>
+    <string name="r_punto_description">
+        Excelente restaurante en el centro del municipio. Ofrececemos cómidas rápidas con gran variedad y a excelentes precios
+    </string>
+    <string name="r_punto_short_info">
+        Ofrececemos cómidas rápidas con gran variedad...
+    </string>
+    <string name="r_punto_short_detail">Comidas rápidas</string>
     <string name="restaurant_nautilus">RESTAURANTE NAUTILUS</string>
+    <string name="r_nautilus_description">
+        Restaurante económico, ubicado cerca de la playa. En Nautilus podrás disfrutar de platos típicos de la región
+        caribe y platos ejecutivos.
+    </string>
+    <string name="r_nautilus_short_info">
+        Restaurante económico, ubicado cerca de la playa...
+    </string>
+    <string name="r_nautilus_short_detail">Económico</string>
+
     <string name="attraction_volcano">VOLCÁN DE LODO</string>
+    <string name="a_volcano_description">
+        El Volcán de Lodo de Arboletes ubicado en la cabecera municipal es el más grande de su especie en Latinoamérica.
+        Con propiedades medicinales el volcán de lodo es uno de los mayores atractivos turísticos no solo de Arboletes
+        sino de la región. Maravillosa expresión de la naturaleza.
+    </string>
+    <string name="a_volcano_short_info">
+        Volcán de lodo más grande en Latinoamérica...
+    </string>
+    <string name="a_volcano_short_detail">Naturaleza</string>
+
     <string name="attraction_church">IGLESIA INMACULADA CONCEPCIÓN</string>
+    <string name="a_church_description">
+        Encontramos una gruta que es un adorno de piedra utilizado en la antigua Jerusalén para colocar imágenes religiosas,
+        igualmente encontramos una pila bautismal también conocida como bautisterio, con una obra de arte realizada en conchas
+        de mar que representa el bautismo de Jesucristo en el rio Jordán realizada por el fallecido señor Héctor propietario del
+        hotel el Faro por orden del entonces párroco Gilberto León Franco; es una fuente compuesta por un circuito cerrado.
+    </string>
+    <string name="a_church_short_info">
+        Encontramos una gruta que es un adorno de piedra utilizado en...
+    </string>
+    <string name="a_church_short_detail">Cultural</string>
+
     <string name="attraction_beach">PLAYAS</string>
+    <string name="a_beach_description">
+        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes, son playas limpias y seguras, iluminadas
+        toda la noche. Dotadas de dos garitas para salvavidas. Es una maravillosa experiencia disfrutar de estas playas en
+        compañía de la Familia, Amigos o la Pareja.
+    </string>
+    <string name="a_beach_short_info">
+        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes...
+    </string>
+    <string name="a_beach_short_detail">Naturaleza</string>
     <string name="sites">Sitios</string>
     <string name="places">Sitios de interés</string>
     <string name="arboletes_info">
@@ -87,6 +142,18 @@
     <string-array name="hotels_description">
         <item>@string/h_mirador_description</item>
         <item>@string/h_riviera_description</item>
-        <item>@string/h_retiro_short_info</item>
+        <item>@string/h_retiro_description</item>
+    </string-array>
+
+    <string-array name="restaurants_description">
+        <item>@string/r_mirador_description</item>
+        <item>@string/r_nautilus_description</item>
+        <item>@string/r_punto_description</item>
+    </string-array>
+
+    <string-array name="attractions_description">
+        <item>@string/a_volcano_description</item>
+        <item>@string/a_church_description</item>
+        <item>@string/a_beach_description</item>
     </string-array>
 </resources>

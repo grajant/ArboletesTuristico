@@ -39,25 +39,25 @@ public class ListPlaces {
 
     public static ArrayList<ListPlaces> hotelsValues(Context context) {
         ArrayList<ListPlaces> users = new ArrayList<>();
-        users.add(new ListPlaces(context.getString(R.string.hotel_mirador), context.getString(R.string.h_mirador_short_info),"15.000", R.drawable.hotel_mirador));
-        users.add(new ListPlaces(context.getString(R.string.hotel_riviera), context.getString(R.string.h_riviera_short_info),"15.000" , R.drawable.hotel_riviera));
+        users.add(new ListPlaces(context.getString(R.string.hotel_mirador), context.getString(R.string.h_mirador_short_info),"15.000", R.drawable.logo_h_mirador));
+        users.add(new ListPlaces(context.getString(R.string.hotel_riviera), context.getString(R.string.h_riviera_short_info),"15.000" , R.drawable.logo_h_riviera));
         users.add(new ListPlaces(context.getString(R.string.hotel_retiro), context.getString(R.string.h_retiro_short_info),"15.000", R.drawable.hotel_retiro));
         return users;
     }
 
     public static ArrayList<ListPlaces> restaurantsValues(Context context) {
         ArrayList<ListPlaces> users = new ArrayList<>();
-        users.add(new ListPlaces(context.getString(R.string.restaurant_mirador), "Primera banda","15.000", R.drawable.restaurant_mirador));
-        users.add(new ListPlaces(context.getString(R.string.restaurant_nautilus), "Segunda banda","15.000" , R.drawable.restaurant_nautiluz));
-        users.add(new ListPlaces(context.getString(R.string.restaurant_punto), "Multiplicador","15.000", R.drawable.restaurant_punto_sabor));
+        users.add(new ListPlaces(context.getString(R.string.restaurant_mirador), context.getString(R.string.r_mirador_short_info),context.getString(R.string.r_mirador_short_detail), R.drawable.restaurant_mirador));
+        users.add(new ListPlaces(context.getString(R.string.restaurant_nautilus), context.getString(R.string.r_nautilus_short_info),context.getString(R.string.r_nautilus_short_detail) , R.drawable.logo_nautilus));
+        users.add(new ListPlaces(context.getString(R.string.restaurant_punto), context.getString(R.string.r_punto_short_info),context.getString(R.string.r_punto_short_detail), R.drawable.logo_punto_sabor));
         return users;
     }
 
     public static ArrayList<ListPlaces> attractionsValues(Context context) {
         ArrayList<ListPlaces> users = new ArrayList<>();
-        users.add(new ListPlaces(context.getString(R.string.attraction_volcano), "Primera banda","15.000", R.drawable.volcano));
-        users.add(new ListPlaces(context.getString(R.string.attraction_church), "Segunda banda","15.000" , R.drawable.church));
-        users.add(new ListPlaces(context.getString(R.string.attraction_beach), "Multiplicador","15.000", R.drawable.beaches));
+        users.add(new ListPlaces(context.getString(R.string.attraction_volcano), context.getString(R.string.a_volcano_short_info),context.getString(R.string.a_volcano_short_detail), R.drawable.volcano));
+        users.add(new ListPlaces(context.getString(R.string.attraction_church), context.getString(R.string.a_church_short_info),context.getString(R.string.a_church_short_detail), R.drawable.church));
+        users.add(new ListPlaces(context.getString(R.string.attraction_beach), context.getString(R.string.a_beach_short_info),context.getString(R.string.a_beach_short_detail), R.drawable.beaches));
         return users;
     }
 
