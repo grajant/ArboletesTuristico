@@ -43,6 +43,7 @@ public class HotelListFragment extends ListFragment implements OnItemClickListen
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
         Intent intent = new Intent(getContext(), DetailsActivity.class);
         intent.putExtra("option", "hotel");
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }

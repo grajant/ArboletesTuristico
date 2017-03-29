@@ -46,6 +46,7 @@ public class AttractionListFragment extends ListFragment implements AdapterView.
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
         Intent intent = new Intent(getContext(), DetailsActivity.class);
         intent.putExtra("option", "tour");
+        intent.putExtra("position", position);
         startActivity(intent);
     }
 }
