@@ -3,7 +3,7 @@
 <resources>
     <string name="app_name">Municipio Arboletes</string>
     <string name="town_name">Uraba Turistico</string>
-    <string name="profile_name">Guillermo Grajales</string>
+    <string name="profile_name">Edite su nombre</string>
     <string name="name_label">nombre:</string>
     <string name="username_label">usuario:</string>
     <string name="email_label">correo electrónico:</string>
@@ -44,8 +44,10 @@
         Idiomas: Español / Ingles, Wifi, Zona Humeda, Aire acondicionado
     </string>
     <string name="h_mirador_short_info">
-        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas...
+        Situado en Arboletes Antioquia, muy cerca de las playas paradisiacas…
     </string>
+    <string name="h_mirador_short_detail">Servicio de alta calidad</string>
+
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
     <string name="h_riviera_description">
         Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe antioqueño, tiene el gusto de
@@ -53,8 +55,10 @@
         estratégicamente ubicado a la entrada del municipio de Arboletes frente al Mar, con la mejor atención e instalaciones.
     </string>
     <string name="h_riviera_short_info">
-        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe...
+        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe…
     </string>
+    <string name="h_riviera_short_detail">Servicio Excelente</string>
+
     <string name="hotel_retiro">RETIRO</string>
     <string name="h_retiro_description">
         Frente al mar en el municipio de Arboletes Antioquia,a 5 minutos de la población
@@ -62,8 +66,9 @@
         2 kioscos para eventos, cocineta, asadero, parqueadero, hamacas. Es lugar ideal para el descanso placentero.
     </string>
     <string name="h_retiro_short_info">
-        Frente al mar en el municipio de Arboletes Antioquia...
+        Frente al mar en el municipio de Arboletes Antioquia…
     </string>
+    <string name="h_retiro_short_detail">Ideal para descansar</string>
     <!-- END TODO ************************************* -->
     <string name="hotel_title">Hoteles</string>
     <string name="restaurant_title">Restaurantes</string>
@@ -74,7 +79,7 @@
         En nuestro bar podrá disfrutar de los más exquisitos cocteles, bebidas y licores nacionales e importados.
     </string>
     <string name="r_mirador_short_info">
-        Disfruta en nuestro restaurante de los más exquisitos platos de mar...
+        Disfruta en nuestro restaurante de los más exquisitos platos de mar…
     </string>
     <string name="r_mirador_short_detail">Alta calidad</string>
     <string name="restaurant_punto">RESTAURANTE EL PUNTO DEL SABOR</string>
@@ -82,7 +87,7 @@
         Excelente restaurante en el centro del municipio. Ofrececemos cómidas rápidas con gran variedad y a excelentes precios
     </string>
     <string name="r_punto_short_info">
-        Ofrececemos cómidas rápidas con gran variedad...
+        Ofrececemos cómidas rápidas con gran variedad…
     </string>
     <string name="r_punto_short_detail">Comidas rápidas</string>
     <string name="restaurant_nautilus">RESTAURANTE NAUTILUS</string>
@@ -91,7 +96,7 @@
         caribe y platos ejecutivos.
     </string>
     <string name="r_nautilus_short_info">
-        Restaurante económico, ubicado cerca de la playa...
+        Restaurante económico, ubicado cerca de la playa…
     </string>
     <string name="r_nautilus_short_detail">Económico</string>
 
@@ -102,7 +107,7 @@
         sino de la región. Maravillosa expresión de la naturaleza.
     </string>
     <string name="a_volcano_short_info">
-        Volcán de lodo más grande en Latinoamérica...
+        Volcán de lodo más grande en Latinoamérica…
     </string>
     <string name="a_volcano_short_detail">Naturaleza</string>
 
@@ -114,7 +119,7 @@
         hotel el Faro por orden del entonces párroco Gilberto León Franco; es una fuente compuesta por un circuito cerrado.
     </string>
     <string name="a_church_short_info">
-        Encontramos una gruta que es un adorno de piedra utilizado en...
+        Encontramos una gruta que es un adorno de piedra utilizado en…
     </string>
     <string name="a_church_short_detail">Cultural</string>
 
@@ -125,7 +130,7 @@
         compañía de la Familia, Amigos o la Pareja.
     </string>
     <string name="a_beach_short_info">
-        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes...
+        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes…
     </string>
     <string name="a_beach_short_detail">Naturaleza</string>
     <string name="sites">Sitios</string>

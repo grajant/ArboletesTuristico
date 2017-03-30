@@ -30,6 +30,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView titleTextV;
     private TextViewEx descriptionTextV;
     private ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +80,7 @@ public class DetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
             Intent intent = new Intent(DetailsActivity.this, PlacesActivity.class);
-            intent.putExtra("option", option);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
             finish();
             return true;

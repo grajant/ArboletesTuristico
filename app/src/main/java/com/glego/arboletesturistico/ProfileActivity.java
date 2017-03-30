@@ -2,6 +2,7 @@ package com.glego.arboletesturistico;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -39,39 +40,21 @@ public class ProfileActivity extends DrawerActivity{
         return getString(R.string.profile);
     }
 
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_profile, menu);
-        return true;
-    }*/
-
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()){
-            case R.id.main_page_menu:
-                intent = new Intent(ProfileActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.logout_menu:
-                intent = new Intent(ProfileActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-        }
-        return true;
-    }
-
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        if (fullLayout.isDrawerOpen(GravityCompat.START)) {
+            fullLayout.closeDrawer(GravityCompat.START);
+        } else {
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            intent.putExtra("username", extras.getString("username"));
+            intent.putExtra("email", extras.getString("email"));
+            startActivity(intent);
+            finish();
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-    }*/
+    }
 }

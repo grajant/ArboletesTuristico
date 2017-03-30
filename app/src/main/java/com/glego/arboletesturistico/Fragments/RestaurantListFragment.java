@@ -24,6 +24,7 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class RestaurantListFragment extends ListFragment implements AdapterView.OnItemClickListener {
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

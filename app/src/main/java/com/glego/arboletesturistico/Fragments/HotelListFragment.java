@@ -21,6 +21,7 @@ import com.glego.arboletesturistico.R;
 import java.util.ArrayList;
 
 public class HotelListFragment extends ListFragment implements OnItemClickListener {
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,4 +47,5 @@ public class HotelListFragment extends ListFragment implements OnItemClickListen
         intent.putExtra("position", position);
         startActivity(intent);
     }
+
 }

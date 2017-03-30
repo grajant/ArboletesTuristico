@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Municipio Arboletes</string>
     <string name="town_name">Uraba Turistico</string>
-    <string name="profile_name">Guillermo Grajales</string>
+    <string name="profile_name">Edit your name</string>
     <string name="name_label">name:</string>
     <string name="username_label">username:</string>
     <string name="email_label">e-mail:</string>
@@ -46,7 +46,7 @@
         Located in Arboletes Antioquia, nearby our municipality paradisiac beaches. : Check in 15:00 h, Check out: 13:00 ho, Night reception available, Languages: Spanish / English, Wifi, Wet Area, Conditioning air
     </string>
     <string name="h_mirador_short_info">
-        Located in Arboletes Antioquia, nearby our municipality paradisiac beaches...
+        Located in Arboletes Antioquia, nearby our municipality paradisiac beaches…
     </string>
     <string name="h_mirador_short_detail">High quality service</string>
 
@@ -57,7 +57,7 @@
         strategically located at municipality entrance in front of sea, offering the best assistance and facilities.
     </string>
     <string name="h_riviera_short_info">
-        Riviera del Sol, Hotel SPA, hotel par excellence of "corazón caribe antioqueño"...
+        Riviera del Sol, Hotel SPA, hotel par excellence of "corazón caribe antioqueño"…
     </string>
     <string name="h_riviera_short_detail">Premium service</string>
 
@@ -68,7 +68,7 @@
         2 kiosks to host events, kitchen, bbq, parking lots, hammocks. The perfect place to get a pleasant rest.
     </string>
     <string name="h_retiro_short_info">
-        Located in front of sea in Arboletes Antioquia municipality...
+        Located in front of sea in Arboletes Antioquia municipality…
     </string>
     <string name="h_retiro_short_detail">Ideal to rest</string>
 
@@ -82,7 +82,7 @@
         Our bar offers the most exquisite cocktails, drinks and imported and national liquors.
     </string>
     <string name="r_mirador_short_info">
-        Enjoy in our restaurant the most delicious sea dishes...
+        Enjoy in our restaurant the most delicious sea dishes…
     </string>
     <string name="r_mirador_short_detail">High quality</string>
 
@@ -91,7 +91,7 @@
         Excellent restaurant located in the municipality downtown. We offer a vast variety of fast food at great prices.
     </string>
     <string name="r_punto_short_info">
-        We offer a vast variety of fast food at great prices...
+        We offer a vast variety of fast food at great prices…
     </string>
     <string name="r_punto_short_detail">Fast food</string>
 
@@ -101,7 +101,7 @@
         and executives dishes.
     </string>
     <string name="r_nautilus_short_info">
-        Restaurant with affordable prices, located near the beach...
+        Restaurant with affordable prices, located near the beach…
     </string>
     <string name="r_nautilus_short_detail">Cheap</string>
 
@@ -112,7 +112,7 @@
         sino de la región. Maravillosa expresión de la naturaleza.
     </string>
     <string name="a_volcano_short_info">
-        Biggest mud volcano in Latin America...
+        Biggest mud volcano in Latin America…
     </string>
     <string name="a_volcano_short_detail">Nature</string>
 
@@ -124,7 +124,7 @@
         hotel el Faro por orden del entonces párroco Gilberto León Franco; es una fuente compuesta por un circuito cerrado.
     </string>
     <string name="a_church_short_info">
-        Encontramos una gruta que es un adorno de piedra utilizado en...
+        Encontramos una gruta que es un adorno de piedra utilizado en…
     </string>
     <string name="a_church_short_detail">Cultural</string>
 
@@ -135,7 +135,7 @@
         compañía de la Familia, Amigos o la Pareja.
     </string>
     <string name="a_beach_short_info">
-        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes...
+        Las Playas de Arboletes son el mayor atractivo turístico para los visitantes…
     </string>
     <string name="a_beach_short_detail">Naturaleza</string>
 

@@ -22,14 +22,6 @@ import com.glego.arboletesturistico.Fragments.RestaurantListFragment;
 
 public class PlacesActivity extends DrawerActivity {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
     private static int menu_places = 2;
     private static int menu_hotel = 0;
     private static int menu_restaurant = 1;
@@ -85,6 +77,9 @@ public class PlacesActivity extends DrawerActivity {
                 listFragment = new AttractionListFragment();
                 checkMenuOption(menu_attractions);
             }
+
+            //Pass extras to fragments in order to avoid data loss
+            //listFragment.setArguments(extras);
 
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, listFragment).commit();
@@ -164,7 +159,7 @@ public class PlacesActivity extends DrawerActivity {
         }
     };
 
-    /** Method to set fragments to every tab **/
+    /** Method to set fragments depending on what option is selected in menu **/
     private void setFragments(int position){
         FragmentManager fragmentManager;
         FragmentTransaction fragmentTransaction;
