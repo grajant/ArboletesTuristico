@@ -19,12 +19,13 @@ public class ProfileActivity extends DrawerActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        extras = getIntent().getExtras();
         setContentView(R.layout.activity_profile);
 
         usernameTextView = (TextView) findViewById(R.id.username);
         emailTextView = (TextView) findViewById(R.id.email);
 
-        extras = getIntent().getExtras();
+
 
         usernameTextView.setText(extras.getString("username"));
         emailTextView.setText(extras.getString("email"));

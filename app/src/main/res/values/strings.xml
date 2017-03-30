@@ -48,54 +48,60 @@
     <string name="h_mirador_short_info">
         Located in Arboletes Antioquia, nearby our municipality paradisiac beaches...
     </string>
+    <string name="h_mirador_short_detail">High quality service</string>
+
     <string name="hotel_riviera">RIVIERA DEL SOL</string>
     <string name="h_riviera_description">
         Riviera del Sol, Hotel SPA, hotel par excellence of "corazón caribe antioqueño", has the pleassure
-        to provide the best accommodation and entertainment service a del departamento de Antioquia,
-        estratégicamente ubicado a la entrada del municipio de Arboletes frente al Mar, con la mejor atención e instalaciones.
+        to provide the best accommodation and entertainment services in Caribbean Region of Antioquia province,
+        strategically located at municipality entrance in front of sea, offering the best assistance and facilities.
     </string>
     <string name="h_riviera_short_info">
-        Riviera del Sol, Hotel SPA, el hotel por excelencia del corazón caribe...
+        Riviera del Sol, Hotel SPA, hotel par excellence of "corazón caribe antioqueño"...
     </string>
+    <string name="h_riviera_short_detail">Premium service</string>
+
     <string name="hotel_retiro">RETIRO</string>
     <string name="h_retiro_description">
-        Frente al mar en el municipio de Arboletes Antioquia,a 5 minutos de la población
-        y a 15 minutos del volcán de lodo. Está dotada de zonas verdes especiales para CAMPING, piscina, baños,
-        2 kioscos para eventos, cocineta, asadero, parqueadero, hamacas. Es lugar ideal para el descanso placentero.
+        Located in front of sea in Arboletes Antioquia municipality, 5 minutes away from downtown
+        and 15 minutes away from mud volcano. It counts with green areas ideally for CAMPING, pools, toilets,
+        2 kiosks to host events, kitchen, bbq, parking lots, hammocks. The perfect place to get a pleasant rest.
     </string>
     <string name="h_retiro_short_info">
-        Frente al mar en el municipio de Arboletes Antioquia...
+        Located in front of sea in Arboletes Antioquia municipality...
     </string>
+    <string name="h_retiro_short_detail">Ideal to rest</string>
+
     <!-- END TODO ************************************* -->
     <string name="hotel_title">Hotels</string>
     <string name="restaurant_title">Restaurants</string>
     <string name="tour_title">Tourist Attractions</string>
-    <string name="restaurant_mirador">RESTAURANTE MIRADOR</string>
+    <string name="restaurant_mirador">RESTAURANT MIRADOR</string>
     <string name="r_mirador_description">
-        Disfruta en nuestro restaurante de los más exquisitos platos de mar, típidos de la región y el resto del país, postres y mucho más, dirigidos por nuestro chef.
-        En nuestro bar podrá disfrutar de los más exquisitos cocteles, bebidas y licores nacionales e importados.
+        Enjoy in our restaurant the most delicious sea dishes, typical food from the region and all the country, desserts and more, recommended by our chefs.
+        Our bar offers the most exquisite cocktails, drinks and imported and national liquors.
     </string>
     <string name="r_mirador_short_info">
-        Disfruta en nuestro restaurante de los más exquisitos platos de mar...
+        Enjoy in our restaurant the most delicious sea dishes...
     </string>
     <string name="r_mirador_short_detail">High quality</string>
 
-    <string name="restaurant_punto">RESTAURANTE EL PUNTO DEL SABOR</string>
+    <string name="restaurant_punto">RESTAURANT EL PUNTO DEL SABOR</string>
     <string name="r_punto_description">
-        Excelente restaurante en el centro del municipio. Ofrececemos cómidas rápidas con gran variedad y a excelentes precios
+        Excellent restaurant located in the municipality downtown. We offer a vast variety of fast food at great prices.
     </string>
     <string name="r_punto_short_info">
-        Ofrececemos cómidas rápidas con gran variedad...
+        We offer a vast variety of fast food at great prices...
     </string>
     <string name="r_punto_short_detail">Fast food</string>
 
-    <string name="restaurant_nautilus">RESTAURANTE NAUTILUS</string>
+    <string name="restaurant_nautilus">RESTAURANT NAUTILUS</string>
     <string name="r_nautilus_description">
-        Restaurante económico, ubicado cerca de la playa. En Nautilus podrás disfrutar de platos típicos de la región
-        caribe y platos ejecutivos.
+        Restaurant with affordable prices, located near the beach. In Nautilus you will find typical dishes of the caribbean region
+        and executives dishes.
     </string>
     <string name="r_nautilus_short_info">
-        Cheap restaurant, located near the beach...
+        Restaurant with affordable prices, located near the beach...
     </string>
     <string name="r_nautilus_short_detail">Cheap</string>
 
@@ -106,9 +112,9 @@
         sino de la región. Maravillosa expresión de la naturaleza.
     </string>
     <string name="a_volcano_short_info">
-        Volcán de lodo más grande en Latinoamérica...
+        Biggest mud volcano in Latin America...
     </string>
-    <string name="a_volcano_short_detail">Naturaleza</string>
+    <string name="a_volcano_short_detail">Nature</string>
 
     <string name="attraction_church">CHURCH INMACULADA CONCEPCIÓN</string>
     <string name="a_church_description">

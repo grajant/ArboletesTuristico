@@ -41,7 +41,6 @@ public class DetailsActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-
         titleTextV = (TextView) findViewById(R.id.item_title);
         descriptionTextV = (TextViewEx) findViewById(R.id.description);
         imageView = (ImageView) findViewById(R.id.image);
@@ -53,14 +52,6 @@ public class DetailsActivity extends AppCompatActivity {
                 displayData(R.string.hotel_mirador, R.string.hotel_riviera, R.string.hotel_retiro,
                         R.drawable.h_mirador_detail, R.drawable.h_riviera_detail, R.drawable.h_retiro_detail);
                 toolbar.setTitle(R.string.hotel_title);
-
-                /*WebView view = (WebView) findViewById(R.id.textContent);
-                String text;
-                text = "<html><body><p align=\"justify\">";
-                text+= getString(R.string.h_mirador_description);
-                text+= "</p></body></html>";
-                view.loadData(getString(R.string.hello), "text/html; charset=utf-8", "utf-8");
-                view.setBackgroundColor(0x00000000);*/
                 break;
             case "restaurant":
                 description = new String[3];

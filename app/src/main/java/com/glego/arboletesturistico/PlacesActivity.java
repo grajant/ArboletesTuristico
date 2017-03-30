@@ -50,10 +50,11 @@ public class PlacesActivity extends DrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        extras = getIntent().getExtras();
         setContentView(R.layout.activity_places);
 
         // Get extra from home in order to know which option was selected
-        extras = getIntent().getExtras();
+
         option = extras.getString("option");
 
         if (navigationView != null) {

@@ -17,9 +17,8 @@ public class MainActivity extends DrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         extras = getIntent().getExtras();
+        setContentView(R.layout.activity_main);
 
         MenuItem item = navigationView.getMenu().getItem(0);
         item.setChecked(true);

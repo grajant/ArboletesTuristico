@@ -68,7 +68,9 @@ public class DrawerActivity extends AppCompatActivity {
         toggle.syncState();
 
         TextView email = (TextView) navigationView.getHeaderView(0).findViewById(R.id.textView);
-        email.setText("guillermo.grajales@udea.edu.co");
+        TextView username = (TextView) navigationView.getHeaderView(0).findViewById(R.id.user_drawer);
+        email.setText(extras.getString("email"));
+        username.setText(extras.getString("username"));
     }
 
     protected String toolbarTitle(){
